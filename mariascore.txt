@@ -1,0 +1,21 @@
+ int i,mincount=0,maxcount=0,cpy[scores_count];
+          
+          int ab[2]={ maxcount,mincount};
+          *result_count = 2;
+         for(i=0;i< scores_count;i++){
+                  cpy[i]=scores[i];
+         }
+         for (i=0;i< scores_count;i++){
+
+             if( scores[0] > scores[i] ){
+                  mincount++;
+                  scores[0] = scores[i];                                               
+             }
+              if( cpy[0] < cpy[i] ){
+                  maxcount++;
+                  cpy[0] = cpy[i];                                               
+             }
+         }
+        return ab;                    
+
+}

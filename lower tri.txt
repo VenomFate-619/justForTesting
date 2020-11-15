@@ -1,0 +1,36 @@
+int iarea[n],area[n],i,p,j,temp,index;
+    for(i=0;i<n;i++)
+    {
+        p=0;
+        p = ( ( tr[i].a+tr[i].b+tr[i].c)/2 );
+        iarea[i]=sqrt( p*(p-tr[i].a)*(p-tr[i].b)*(p-tr[i].c));
+
+    }
+    for(i=0;i<n;i++)//coping the content
+    {
+        area[i]=iarea[i];
+    }
+    //sorting
+    for(i=0;i<n-1;i++)
+    {
+        for(j=0;j<n-i-1;j++)
+        {
+            if( area[j] > area[j+1])
+             temp=area[j+1];
+             area[j+1]=area[j];
+             area[j]=temp;
+        }
+
+    }
+     for(i=0;i<n;i++)
+     {
+         for(j=0;j<n;j++)
+         {
+             if( iarea[i]==area[j])
+                 index=j;
+         }
+         tr[i].a =  tr[index].a ;
+         tr[i].b =  tr[index].b;
+         tr[i].c =  tr[index].c;
+     }
+  
